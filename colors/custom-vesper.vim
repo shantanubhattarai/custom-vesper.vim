@@ -1,8 +1,8 @@
 " ============================================================================
-" rubber-owl
-" 
-" URL: https://github.com/VonHeikemen/rubber-themes.vim
-" Author: Heiker
+" custom-vesper
+"
+" URL: https://github.com/shantanubhattarai/custom-vesper.vim
+" Author: Shantanu
 " License: MIT
 " ============================================================================
 
@@ -14,39 +14,42 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name="rubber-owl"
+let g:colors_name="rubber"
 
 " ============================================================================ "
 " ===                                COLORS                                === "
 " ============================================================================ "
 
-let s:black          = {"gui": "#011627", "cterm": "233"}
-let s:blue           = {"gui": "#82AAFF", "cterm": "111"}
+let s:black          = {"gui": "#21252B", "cterm": "235"}
+let s:blue           = {"gui": "#61AFEF", "cterm": "75" }
 let s:cyan           = {"gui": "#56B6C2", "cterm": "73" }
 let s:green          = {"gui": "#98C379", "cterm": "108"}
-let s:magenta        = {"gui": "#C792EA", "cterm": "176"}
-let s:red            = {"gui": "#FF869A", "cterm": "210"}
-let s:yellow         = {"gui": "#ECC48D", "cterm": "222"}
-let s:white          = {"gui": "#D6DEEB", "cterm": "253"}
-
+let s:magenta        = {"gui": "#BF79C3", "cterm": "139"}
+let s:red            = {"gui": "#E06C75", "cterm": "168"}
+let s:yellow         = {"gui": "#D19A66", "cterm": "173"}
+let s:white          = {"gui": "#ABB2BF", "cterm": "249"}
+let s:vesper_orange  = {"gui": "#F3C599", "cterm": "202"}
+let s:vesper_gray    = {"gui": "#7E7E7E", "cterm": "145"}
+let s:vesper_salmon  = {"gui": "#C5BBA3", "cterm": "137"}
 let s:bright_black   = {"gui": "#5F6672", "cterm": "242"}
 let s:bright_white   = {"gui": "#D4D7D9", "cterm": "188"}
-let s:pink           = {"gui": "#FF2C83", "cterm": "198"}
 
-let s:gray           = {"gui": "#8893A6", "cterm": "103"}
-let s:dark_blue      = {"gui": "#01121F", "cterm": "233"}
-let s:sad_blue       = {"gui": "#1D3B53", "cterm": "237"}
-let s:darkness       = {"gui": "#073642", "cterm": "237"}
+let s:dark_gray      = {"gui": "#737C8C", "cterm": "8"  }
+let s:gray           = {"gui": "#181A1F", "cterm": "234"}
+let s:wild_red       = {"gui": "#DF334A", "cterm": "167"}
+let s:dark_blue      = {"gui": "#3B4049", "cterm": "238"}
+let s:darkness       = {"gui": "#3B4252", "cterm": "238"}
+
 
 " Constants
 let s:none       = {"gui": "NONE", "cterm": "NONE"}
 let s:foreground = s:white
-let s:comment    = s:red
-let s:constant   = s:magenta
-let s:storage    = s:blue
-let s:string     = s:yellow
-let s:special    = s:gray
-let s:error      = s:pink
+let s:comment    = s:vesper_salmon
+let s:constant   = s:vesper_orange
+let s:storage    = s:vesper_orange
+let s:string     = s:vesper_gray
+let s:special    = s:vesper_gray
+let s:error      = s:wild_red
 
 
 " Highlight utility function
@@ -72,24 +75,24 @@ call s:h("Normal",       {"fg": s:foreground,   "bg": s:none        })
 call s:h("Cursor",       {"fg": s:black,        "bg": s:white       })
 call s:h("CursorLine",   {"fg": s:none,         "bg": s:dark_blue   })
 call s:h("CursorLineNr", {"fg": s:none,         "bg": s:none        })
-call s:h("ColorColumn",  {"fg": s:none,         "bg": s:dark_blue   })
-call s:h("LineNr",       {"fg": s:gray,         "bg": s:none        })
-call s:h("EndOfBuffer",  {"fg": s:gray,         "bg": s:none        })
+call s:h("ColorColumn",  {"fg": s:none,         "bg": s:bright_black})
+call s:h("LineNr",       {"fg": s:dark_gray,    "bg": s:none        })
+call s:h("EndOfBuffer",  {"fg": s:dark_gray,    "bg": s:none        })
 call s:h("VertSplit",    {"fg": s:darkness,     "bg": s:none        })
 call s:h("Folded",       {"fg": s:bright_black, "bg": s:none        })
 call s:h("FoldColumn",   {"fg": s:bright_black, "bg": s:none        })
-call s:h("PMenu",        {"fg": s:none,         "bg": s:sad_blue    })
-call s:h("PMenuSel",     {"fg": s:black,        "bg": s:blue        })
+call s:h("PMenu",        {"fg": s:none,         "bg": s:dark_blue   })
+call s:h("PMenuSel",     {"fg": s:none,         "bg": s:bright_black})
 call s:h("TabLine",      {"fg": s:none,         "bg": s:darkness    })
 call s:h("TabLineFill",  {"fg": s:none,         "bg": s:darkness    })
-call s:h("TabLineSel",   {"fg": s:none,         "bg": s:black       })
+call s:h("TabLineSel",   {"fg": s:bright_white, "bg": s:black       })
 call s:h("StatusLine",   {"fg": s:bright_white, "bg": s:darkness    })
-call s:h("StatusLineNC", {"fg": s:gray,         "bg": s:darkness    })
-call s:h("WildMenu",     {"fg": s:black,        "bg": s:magenta     })
-call s:h("MatchParen",   {"fg": s:black,        "bg": s:bright_black})
-call s:h("Visual",       {"fg": s:white,        "bg": s:sad_blue    })
-call s:h("IncSearch",    {"fg": s:black,        "bg": s:magenta     })
-call s:h("Search",       {"fg": s:black,        "bg": s:magenta     })
+call s:h("StatusLineNC", {"fg": s:dark_gray,    "bg": s:darkness    })
+call s:h("WildMenu",     {"fg": s:black,        "bg": s:yellow      })
+call s:h("MatchParen",   {"fg": s:black,        "bg": s:dark_gray   })
+call s:h("Visual",       {"fg": s:white,        "bg": s:dark_blue   })
+call s:h("Search",       {"fg": s:black,        "bg": s:yellow      })
+call s:h("IncSearch",    {"fg": s:black,        "bg": s:yellow      })
 
 
 " ============================================================================ "
@@ -197,7 +200,7 @@ hi! link phpClasses   Normal
 " Language: Javascript
 " Syntax: built-in
 hi! link javaScriptNumber   Number
-hi! link javaScriptNull     Boolean
+hi! link javaScriptNull     Number
 hi! link javaScriptBraces   Normal
 hi! link javaScriptFunction Normal
 
@@ -205,8 +208,8 @@ hi! link javaScriptFunction Normal
 " Language: Javascript
 " Syntax: 'pangloss/vim-javascript'
 hi! link jsFunctionKey Function
-hi! link jsUndefined   Boolean
-hi! link jsNull        Boolean
+hi! link jsUndefined   Number
+hi! link jsNull        Number
 hi! link jsSuper       Normal
 hi! link jsThis        Normal
 hi! link jsArguments   Normal
@@ -223,7 +226,7 @@ hi! link jsxAttrib        Normal
 
 
 " Language: Twig
-" Syntax: 'lumiliet/vim-twig' 
+" Syntax: 'lumiliet/vim-twig'
 hi! link twigString String
 
 
@@ -264,35 +267,35 @@ endif
 if has('nvim')
   let g:terminal_color_foreground = s:foreground.gui
   let g:terminal_color_background = s:black.gui
- 
-  " black 
+
+  " black
   let g:terminal_color_0          = s:black.gui
   let g:terminal_color_8          = s:bright_black.gui
-  
+
   " red
   let g:terminal_color_1          = s:red.gui
-  let g:terminal_color_9          = s:red.gui 
-  
+  let g:terminal_color_9          = s:red.gui
+
   " green
   let g:terminal_color_2          = s:green.gui
   let g:terminal_color_10         = s:green.gui
-  
+
   " yellow
   let g:terminal_color_3          = s:yellow.gui
   let g:terminal_color_11         = s:yellow.gui
-  
+
   " blue
   let g:terminal_color_4          = s:blue.gui
   let g:terminal_color_12         = s:blue.gui
-  
+
   " magenta
   let g:terminal_color_5          = s:magenta.gui
   let g:terminal_color_13         = s:magenta.gui
-  
+
   " cyan
   let g:terminal_color_6          = s:cyan.gui
   let g:terminal_color_14         = s:cyan.gui
-  
+
   " white
   let g:terminal_color_7          = s:white.gui
   let g:terminal_color_15         = s:bright_white.gui
@@ -302,6 +305,6 @@ else
     \ s:blue.gui,         s:magenta.gui, s:cyan.gui,  s:white.gui,
     \ s:bright_black.gui, s:red.gui,     s:green.gui, s:yellow.gui,
     \ s:blue.gui,         s:magenta.gui, s:cyan.gui,  s:bright_white.gui
-    \ ] 
+    \ ]
 endif
 
