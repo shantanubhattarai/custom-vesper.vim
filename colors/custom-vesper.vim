@@ -48,7 +48,7 @@ let s:comment    = s:vesper_salmon
 let s:constant   = s:vesper_orange
 let s:storage    = s:vesper_orange
 let s:string     = s:vesper_gray
-let s:special    = s:vesper_gray
+let s:special    = s:vesper_orange
 let s:error      = s:wild_red
 
 
